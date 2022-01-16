@@ -1,20 +1,18 @@
 import './styles/Categories.css'
+import Select from 'react-select'
 
-function Categories({activeCategory, setActiveCategory, categories}){
+function Categories({setActiveCategory, categories}){
 
     return (
         <div className='lmj-categories'>
-            <select 
-                value={activeCategory}
-                onChange={(e)=>setActiveCategory(e.target.value)}
-                className='lmj-categories-select'
-            >
-                <option value=''>Choisir la categorie de plante</option>
-                {categories.map((cat)=>(
-                    <option key={cat} value={cat}>{cat}</option>
-                ))}
-            </select>
-            <button onClick={()=>setActiveCategory('')}>Reinitialiser</button>
+            <Select
+                placeholder="Choisissez la catégorie"
+                isMulti 
+                options = {categories.map(
+                    (cat) => ({value : cat, label : cat})
+                )}
+                onChange={(e)=>setActiveCategory(e)}
+            />
         </div>
     )
 }
