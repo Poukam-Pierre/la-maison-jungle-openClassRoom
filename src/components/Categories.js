@@ -6,6 +6,7 @@ function Categories({setActiveCategory, categories}){
     return (
         <div className='lmj-categories'>
             <Select
+            className='lmj-categories-select'
                 placeholder="Choisissez la catégorie"
                 isMulti 
                 options = {categories.map(

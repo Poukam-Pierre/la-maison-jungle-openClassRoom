@@ -1,8 +1,9 @@
 .lmj-categories {
-	text-align: center;
-	padding-top: 30px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
 }
 
 .lmj-categories-select {
-	margin-right: 15px;
+	margin-top: 15px;
 }
